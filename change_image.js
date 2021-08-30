@@ -1,11 +1,15 @@
-const picture = document.getElementById('img1');
-picture.addEventListener("click", change);
+const picture = document.getElementById('main-image');
 
-function change() {
-    if(picture.getAttribute('src') == 'https://mdn.github.io/beginner-html-site-scripted/images/firefox-icon.png') {
-        picture.src = 'https://mdn.github.io/beginner-html-site-scripted/images/firefox2.png';
+picture.addEventListener("click", function(el=picture, img1='images/firefox1.png', img2='images/firefox2.png') {
+    
+    let src_img =  el.toElement.src + "";
+    let split_src = src_img.split("/");
+    let urlToCompare = split_src[split_src.length - 2] + "/" + split_src[split_src.length - 1];
+
+    if (urlToCompare == img1) {
+        el.toElement.src = img2;
     } else {
-        picture.src = 'https://mdn.github.io/beginner-html-site-scripted/images/firefox-icon.png';
+        el.toElement.src = img1;
     }
 }
-
+)
